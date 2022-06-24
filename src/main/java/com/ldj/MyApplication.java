@@ -8,9 +8,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class MyApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(MyApplication.class);
-        UserService bean = configurableApplicationContext.getBean(UserService.class);
-        bean.test();
+        SpringApplication.run(MyApplication.class);
+
 
 //        UserService userService = new UserService();
 //        for( Field field : userService.getClass().getDeclaredFields()){
