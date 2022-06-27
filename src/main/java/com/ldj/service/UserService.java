@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 
-@Component
+
 public class UserService implements InitializingBean {
 
     OrderService orderService;
