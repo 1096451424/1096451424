@@ -1,31 +1,22 @@
 package com.ldj.service;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 
 
-public class UserService implements InitializingBean {
+@Service
+public class UserService {
 
-    OrderService orderService;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
-    private User admin;
-
-    @PostConstruct
-    public void a (){
-        System.out.println("b");
-    }
-
-    @Transactional
     public void test(){
-        System.out.println(admin);
-    }
-
-    @Override
-    public void afterPropertiesSet() {
-        System.out.println("c");
-
+        jdbcTemplate.execute("INSERT into t1 values('1','2','3','4');");
     }
 }

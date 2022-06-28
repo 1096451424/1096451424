@@ -10,22 +10,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-
 public class MyApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(MyApplication.class);
-
-//        System.out.println(run.getBean(AppConfig.class));
-        run.getBean(User.class).test();
-
-//        User bean = run.getBean(User.class);
-//        System.out.println(bean);
-
-//        UserService userService = new UserService();
-//        for( Field field : userService.getClass().getDeclaredFields()){
-//            if (field.isAnnotationPresent(Autowired.class)){
-//                System.out.println(field);
-//            }
-//        }
+         SpringApplication.run(MyApplication.class);
     }
 }
