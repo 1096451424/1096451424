@@ -1,17 +1,18 @@
 package com.ldj;
 
-import com.ldj.service.User;
-import com.ldj.service.UserService;
-import org.apache.ibatis.annotations.Property;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-public class MyApplication {
+public class MyApplication implements ApplicationRunner {
     public static void main(String[] args) {
-         SpringApplication.run(MyApplication.class);
+         SpringApplication.run(MyApplication.class,"--ldj=55666");
+    }
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println(args.getOptionValues("ldj"));
     }
 }

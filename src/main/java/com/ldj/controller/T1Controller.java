@@ -1,14 +1,12 @@
 package com.ldj.controller;
 
 
-import com.ldj.entity.T1;
-import com.ldj.mapper.T1Mapper;
 import com.ldj.service.IT1Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * <p>
@@ -26,8 +24,14 @@ public class T1Controller {
     private IT1Service it1Service;
 
     @GetMapping("/test")
-    private void test(){
-        it1Service.test();
+    private void test(String str){
+//        it1Service.test();
+        it1Service.saveRedis(str);
+    }
+
+    @GetMapping("/getValue")
+    private void getValue(){
+        it1Service.getValue();
     }
 
 }

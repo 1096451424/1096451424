@@ -15,4 +15,8 @@ public interface IT1Service extends IService<T1> {
 
     void test();
 
+    void saveRedis(String str);
+
+    String getValue();
+
 }
